@@ -1,3 +1,5 @@
+package com.github.emilybache.yatzy;
+
 public class Yatzy {
 
     public static int chance(final int d1, final int d2, final int d3, final int d4, final int d5) {
