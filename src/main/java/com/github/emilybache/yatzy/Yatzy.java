@@ -81,49 +81,13 @@ public class Yatzy {
     }
 
     public int smallStraight() {
-        final ArrayList<Integer> smallStraightValues = new ArrayList<>();
-        smallStraightValues.add(1);
-        smallStraightValues.add(2);
-        smallStraightValues.add(3);
-        smallStraightValues.add(4);
-        smallStraightValues.add(5);
-
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-        final boolean containsStraight = countsMap.keySet().stream()
-            .anyMatch(value -> smallStraightValues.remove(value)
-                && smallStraightValues.isEmpty());
-
-        if (countsMap.size() != 5 || !containsStraight) {
-            return 0;
-        }
-
-        return countsMap.keySet().stream().mapToInt(Integer::intValue).sum();
+        final ArrayList<Integer> straightList = buildStraightList(1, 5);
+        return this.countStraightPoints(straightList);
     }
 
     public int largeStraight() {
-        final ArrayList<Integer> largeStraightValues = new ArrayList<>();
-        largeStraightValues.add(2);
-        largeStraightValues.add(3);
-        largeStraightValues.add(4);
-        largeStraightValues.add(5);
-        largeStraightValues.add(6);
-
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-        final boolean containsStraight = countsMap.keySet().stream()
-            .anyMatch(value -> largeStraightValues.remove(value)
-                && largeStraightValues.isEmpty());
-
-        if (countsMap.size() != 5 || !containsStraight) {
-            return 0;
-        }
-
-        return countsMap.keySet().stream().mapToInt(Integer::intValue).sum();
+        final ArrayList<Integer> straightList = buildStraightList(2, 6);
+        return this.countStraightPoints(straightList);
     }
 
     public int fullHouse() {
@@ -181,6 +145,32 @@ public class Yatzy {
             .filter(entry -> entry.getValue() >= diceValue)
             .map(entry -> entry.getKey() * diceValue)
             .collect(Collectors.toList());
+    }
+
+    private int countStraightPoints(final ArrayList<Integer> straightValues) {
+
+        final Map<Integer, Long> countsMap = this.dices.stream()
+            .sorted()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        final boolean containsStraight = countsMap.keySet().stream()
+            .anyMatch(value -> straightValues.remove(value)
+                && straightValues.isEmpty());
+
+        if (countsMap.size() != 5 || !containsStraight) {
+            return 0;
+        }
+
+        return countsMap.keySet().stream().mapToInt(Integer::intValue).sum();
+    }
+
+    private static ArrayList<Integer> buildStraightList(final int startValue, final int endValue) {
+        final ArrayList<Integer> smallStraightValues = new ArrayList<>();
+
+        for (int i = startValue; i <= endValue; i++) {
+            smallStraightValues.add(i);
+        }
+        return smallStraightValues;
     }
 }
 
