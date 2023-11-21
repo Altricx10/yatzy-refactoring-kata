@@ -18,7 +18,7 @@ public class Yatzy {
         for (final int dice : this.dices) {
             counts[dice - 1]++;
         }
-        for (int i = 0; i != 6; i++) {
+        for (int i = 0; i < counts.length; i++) {
             if (counts[i] == 5) {
                 return 50;
             }
@@ -29,7 +29,7 @@ public class Yatzy {
     public int chance() {
         int sum;
         sum = 0;
-        for (int at = 0; at != 5; at++) {
+        for (int at = 0; at < this.dices.length; at++) {
             sum += this.dices[at];
         }
         return sum;
@@ -38,7 +38,7 @@ public class Yatzy {
     public int ones() {
         int sum;
         sum = 0;
-        for (int at = 0; at != 5; at++) {
+        for (int at = 0; at < this.dices.length; at++) {
             if (this.dices[at] == 1) {
                 sum += 1;
             }
@@ -49,7 +49,7 @@ public class Yatzy {
     public int twos() {
         int sum;
         sum = 0;
-        for (int at = 0; at != 5; at++) {
+        for (int at = 0; at < this.dices.length; at++) {
             if (this.dices[at] == 2) {
                 sum += 2;
             }
@@ -60,7 +60,7 @@ public class Yatzy {
     public int threes() {
         int sum;
         sum = 0;
-        for (int at = 0; at != 5; at++) {
+        for (int at = 0; at < this.dices.length; at++) {
             if (this.dices[at] == 3) {
                 sum += 3;
             }
@@ -71,7 +71,7 @@ public class Yatzy {
     public int fours() {
         int sum;
         sum = 0;
-        for (int at = 0; at != 5; at++) {
+        for (int at = 0; at < this.dices.length; at++) {
             if (this.dices[at] == 4) {
                 sum += 4;
             }
@@ -106,7 +106,7 @@ public class Yatzy {
         counts[this.dices[2] - 1]++;
         counts[this.dices[3] - 1]++;
         counts[this.dices[4] - 1]++;
-        for (int at = 0; at != 6; at++) {
+        for (int at = 0; at < counts.length; at++) {
             if (counts[6 - at - 1] >= 2) {
                 return (6 - at) * 2;
             }
@@ -123,7 +123,7 @@ public class Yatzy {
         counts[this.dices[4] - 1]++;
         int pairNumber = 0;
         int score = 0;
-        for (int i = 0; i < 6; i += 1) {
+        for (int i = 0; i < counts.length; i += 1) {
             if (counts[6 - i - 1] >= 2) {
                 pairNumber++;
                 score += (6 - i);
@@ -143,7 +143,7 @@ public class Yatzy {
         counts[this.dices[2] - 1]++;
         counts[this.dices[3] - 1]++;
         counts[this.dices[4] - 1]++;
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < counts.length; i++) {
             if (counts[i] >= 4) {
                 return (i + 1) * 4;
             }
@@ -158,7 +158,7 @@ public class Yatzy {
         counts[this.dices[2] - 1]++;
         counts[this.dices[3] - 1]++;
         counts[this.dices[4] - 1]++;
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < counts.length; i++) {
             if (counts[i] >= 3) {
                 return (i + 1) * 3;
             }
@@ -213,14 +213,14 @@ public class Yatzy {
         counts[this.dices[3] - 1] += 1;
         counts[this.dices[4] - 1] += 1;
 
-        for (int i = 0; i != 6; i += 1) {
+        for (int i = 0; i < counts.length; i += 1) {
             if (counts[i] == 2) {
                 haveTwoSameDice = true;
                 twoSameDiceValue = i + 1;
             }
         }
 
-        for (int i = 0; i != 6; i += 1) {
+        for (int i = 0; i < counts.length; i += 1) {
             if (counts[i] == 3) {
                 haveThreeSameDice = true;
                 threeSameDiceValue = i + 1;
