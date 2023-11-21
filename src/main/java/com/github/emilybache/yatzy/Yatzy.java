@@ -200,18 +200,18 @@ public class Yatzy {
         return 0;
     }
 
-    public static int fullHouse(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
+    public int fullHouse() {
         final int[] counts = new int[6];
         boolean haveTwoSameDice = false;
         int twoSameDiceValue = 0;
         boolean haveThreeSameDice = false;
         int threeSameDiceValue = 0;
 
-        counts[dice1 - 1] += 1;
-        counts[dice2 - 1] += 1;
-        counts[dice3 - 1] += 1;
-        counts[dice4 - 1] += 1;
-        counts[dice5 - 1] += 1;
+        counts[this.dices[0] - 1] += 1;
+        counts[this.dices[1] - 1] += 1;
+        counts[this.dices[2] - 1] += 1;
+        counts[this.dices[3] - 1] += 1;
+        counts[this.dices[4] - 1] += 1;
 
         for (int i = 0; i != 6; i += 1) {
             if (counts[i] == 2) {

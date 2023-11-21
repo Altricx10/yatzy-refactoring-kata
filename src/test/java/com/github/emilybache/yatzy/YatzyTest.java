@@ -15,15 +15,14 @@ public class YatzyTest {
     @DisplayName("given five different dices")
     class GivenFiveDifferentDices {
 
-        private final int dice1 = 1;
-        private final int dice2 = 3;
-        private final int dice3 = 4;
-        private final int dice4 = 5;
-        private final int dice5 = 6;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice1 = 1;
+            final int dice2 = 3;
+            final int dice3 = 4;
+            final int dice4 = 5;
+            final int dice5 = 6;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -273,7 +272,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
@@ -288,15 +287,14 @@ public class YatzyTest {
     @DisplayName("given two same dices")
     class GivenTwoSameDices {
 
-        private final int dice1 = 1;
-        private final int dice2 = 1;
-        private final int dice3 = 4;
-        private final int dice4 = 5;
-        private final int dice5 = 6;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice5 = 6;
+            final int dice4 = 5;
+            final int dice3 = 4;
+            final int dice2 = 1;
+            final int dice1 = 1;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -546,7 +544,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
@@ -561,15 +559,14 @@ public class YatzyTest {
     @DisplayName("given three same dices")
     class GivenThreeSameDices {
 
-        private final int dice1 = 1;
-        private final int dice2 = 1;
-        private final int dice3 = 1;
-        private final int dice4 = 5;
-        private final int dice5 = 6;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice1 = 1;
+            final int dice5 = 6;
+            final int dice4 = 5;
+            final int dice3 = 1;
+            final int dice2 = 1;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -819,7 +816,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
@@ -834,15 +831,14 @@ public class YatzyTest {
     @DisplayName("given four same dices")
     class GivenFourSameDices {
 
-        private final int dice1 = 1;
-        private final int dice2 = 1;
-        private final int dice3 = 1;
-        private final int dice4 = 1;
-        private final int dice5 = 6;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice5 = 6;
+            final int dice4 = 1;
+            final int dice3 = 1;
+            final int dice2 = 1;
+            final int dice1 = 1;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -1092,7 +1088,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
@@ -1107,15 +1103,14 @@ public class YatzyTest {
     @DisplayName("given five same dices")
     class GivenFiveSameDices {
 
-        private final int dice1 = 1;
-        private final int dice2 = 1;
-        private final int dice3 = 1;
-        private final int dice4 = 1;
-        private final int dice5 = 1;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice5 = 1;
+            final int dice4 = 1;
+            final int dice3 = 1;
+            final int dice2 = 1;
+            final int dice1 = 1;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -1365,7 +1360,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
@@ -1380,15 +1375,14 @@ public class YatzyTest {
     @DisplayName("given two same dices and other two same dices")
     class GivenTwoSameDicesAndOtherTwoSameDices {
 
-        private final int dice1 = 1;
-        private final int dice2 = 1;
-        private final int dice3 = 2;
-        private final int dice4 = 2;
-        private final int dice5 = 6;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice5 = 6;
+            final int dice4 = 2;
+            final int dice3 = 2;
+            final int dice2 = 1;
+            final int dice1 = 1;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -1638,7 +1632,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
@@ -1653,15 +1647,14 @@ public class YatzyTest {
     @DisplayName("given three same dices and other two same dices")
     class GivenThreeSameDicesAndOtherTwoSameDices {
 
-        private final int dice1 = 1;
-        private final int dice2 = 1;
-        private final int dice3 = 1;
-        private final int dice4 = 2;
-        private final int dice5 = 2;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice5 = 2;
+            final int dice4 = 2;
+            final int dice3 = 1;
+            final int dice2 = 1;
+            final int dice1 = 1;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -1911,7 +1904,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
@@ -1926,15 +1919,14 @@ public class YatzyTest {
     @DisplayName("given small straight")
     class GivenSmallStraight {
 
-        private final int dice1 = 1;
-        private final int dice2 = 2;
-        private final int dice3 = 3;
-        private final int dice4 = 4;
-        private final int dice5 = 5;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice5 = 5;
+            final int dice4 = 4;
+            final int dice3 = 3;
+            final int dice2 = 2;
+            final int dice1 = 1;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -2184,7 +2176,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
@@ -2199,15 +2191,14 @@ public class YatzyTest {
     @DisplayName("given large straight")
     class GivenLargeStraight {
 
-        private final int dice1 = 2;
-        private final int dice2 = 3;
-        private final int dice3 = 4;
-        private final int dice4 = 5;
-        private final int dice5 = 6;
-
         @BeforeEach
         void setUp() {
-            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            final int dice5 = 6;
+            final int dice4 = 5;
+            final int dice3 = 4;
+            final int dice2 = 3;
+            final int dice1 = 2;
+            YatzyTest.this.yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
         }
 
         @Nested
@@ -2457,7 +2448,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-                this.result = Yatzy.fullHouse(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
+                this.result = YatzyTest.this.yatzy.fullHouse();
             }
 
             @Test
