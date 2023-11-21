@@ -85,7 +85,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
@@ -358,7 +358,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
@@ -631,7 +631,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
@@ -904,7 +904,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
@@ -1177,7 +1177,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
@@ -1450,7 +1450,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
@@ -1723,7 +1723,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
@@ -1996,7 +1996,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
@@ -2269,7 +2269,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.twos();
             }
 
             @Test
