@@ -15,6 +15,7 @@ public class Yatzy {
     }
 
     public int yatzy() {
+
         final List<Integer> points = this.countDicePoints(5);
 
         if (points.isEmpty()) {
@@ -91,9 +92,7 @@ public class Yatzy {
 
     public int fullHouse() {
 
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        final Map<Integer, Long> countsMap = this.groupDicesByValues();
 
         final boolean containsThreeSameDices = countsMap.values().stream().anyMatch(value -> value == 3);
 
@@ -104,28 +103,60 @@ public class Yatzy {
         return 0;
     }
 
+    /**
+     * Grouping dices by values
+     * Ex: 12312
+     * 1 : 2 dices
+     * 2 : 2 dices
+     * 3 : 1 dices
+     *
+     * @return a {@link Map}<{@link Integer}, {@link Long}> where key is a dice value and value is the number of dices
+     */
+    private Map<Integer, Long> groupDicesByValues() {
+        return this.dices.stream()
+            .sorted()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    /**
+     * Count dices point for a specific dice value.
+     * Ex: 12312 count point for 2 => 4
+     *
+     * @param diceValue the dice value use to count points
+     * @return the points number for a specific dice value
+     */
     private int countDicesPoint(final int diceValue) {
         return this.dices.stream().filter(dice -> dice == diceValue).mapToInt(Integer::intValue).sum();
     }
 
-    private List<Integer> countDicePoints(final int diceValue) {
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    /**
+     * Count dices points for multiple same dices specify.
+     * Ex : 12312 sameDicesValue = 2
+     * [2, 4]
+     *
+     * @param sameDiceValue count points for this same dice value
+     * @return a {@link List} of {@link Integer} who contains same dices value points
+     */
+    private List<Integer> countDicePoints(final int sameDiceValue) {
+        final Map<Integer, Long> countsMap = this.groupDicesByValues();
 
         return countsMap
             .entrySet()
             .stream()
-            .filter(entry -> entry.getValue() >= diceValue)
-            .map(entry -> entry.getKey() * diceValue)
+            .filter(entry -> entry.getValue() >= sameDiceValue)
+            .map(entry -> entry.getKey() * sameDiceValue)
             .collect(Collectors.toList());
     }
 
+    /**
+     * Count straight points for a straight values specify
+     *
+     * @param straightValues the straight values
+     * @return the straight points
+     */
     private int countStraightPoints(final ArrayList<Integer> straightValues) {
 
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        final Map<Integer, Long> countsMap = this.groupDicesByValues();
 
         final boolean containsStraight = countsMap.keySet().stream()
             .anyMatch(value -> straightValues.remove(value)
@@ -138,6 +169,13 @@ public class Yatzy {
         return countsMap.keySet().stream().mapToInt(Integer::intValue).sum();
     }
 
+    /**
+     * Build a straight list start by start value and end with  end value
+     *
+     * @param startValue the straight list start by this value
+     * @param endValue   the straight list end with this value
+     * @return a {@link List} of {@link Integer} with the straight generated
+     */
     private static ArrayList<Integer> buildStraightList(final int startValue, final int endValue) {
         final ArrayList<Integer> smallStraightValues = new ArrayList<>();
 
