@@ -1,5 +1,6 @@
 package com.github.emilybache.yatzy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -80,15 +81,26 @@ public class Yatzy {
     }
 
     public int smallStraight() {
-        final int[] counts = this.countDicesPoint();
-        if (counts[0] == 1 &&
-            counts[1] == 1 &&
-            counts[2] == 1 &&
-            counts[3] == 1 &&
-            counts[4] == 1) {
-            return 15;
+        final ArrayList<Integer> smallStraightValues = new ArrayList<>();
+        smallStraightValues.add(1);
+        smallStraightValues.add(2);
+        smallStraightValues.add(3);
+        smallStraightValues.add(4);
+        smallStraightValues.add(5);
+
+        final Map<Integer, Long> countsMap = this.dices.stream()
+            .sorted()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        final boolean containsStraight = countsMap.keySet().stream()
+            .anyMatch(value -> smallStraightValues.remove(value)
+                && smallStraightValues.isEmpty());
+
+        if (countsMap.size() != 5 || !containsStraight) {
+            return 0;
         }
-        return 0;
+
+        return countsMap.keySet().stream().mapToInt(Integer::intValue).sum();
     }
 
     public int largeStraight() {
