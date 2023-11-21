@@ -92,42 +92,17 @@ public class Yatzy {
 
     public int fullHouse() {
 
-        boolean haveTwoSameDice = false;
-        int twoSameDiceValue = 0;
-        boolean haveThreeSameDice = false;
-        int threeSameDiceValue = 0;
+        final Map<Integer, Long> countsMap = this.dices.stream()
+            .sorted()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
-        final int[] counts = this.countDicesPoint();
+        final boolean containsThreeSameDices = countsMap.values().stream().anyMatch(value -> value == 3);
 
-        for (int i = 0; i < counts.length; i += 1) {
-            if (counts[i] == 2) {
-                haveTwoSameDice = true;
-                twoSameDiceValue = i + 1;
-            }
+        if (containsThreeSameDices && countsMap.size() == 2) {
+            return countsMap.entrySet().stream().mapToInt(entry -> entry.getKey() * entry.getValue().intValue()).sum();
         }
 
-        for (int i = 0; i < counts.length; i += 1) {
-            if (counts[i] == 3) {
-                haveThreeSameDice = true;
-                threeSameDiceValue = i + 1;
-            }
-        }
-
-        if (haveTwoSameDice && haveThreeSameDice) {
-            return twoSameDiceValue * 2 + threeSameDiceValue * 3;
-        } else {
-            return 0;
-        }
-    }
-
-    private int[] countDicesPoint() {
-        final int[] counts = new int[6];
-        counts[this.dices.get(0) - 1] += 1;
-        counts[this.dices.get(1) - 1] += 1;
-        counts[this.dices.get(2) - 1] += 1;
-        counts[this.dices.get(3) - 1] += 1;
-        counts[this.dices.get(4) - 1] += 1;
-        return counts;
+        return 0;
     }
 
     private int countDicesPoint(final int diceValue) {
