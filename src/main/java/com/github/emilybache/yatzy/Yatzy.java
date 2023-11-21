@@ -12,7 +12,7 @@ public class Yatzy {
     }
 
     public int yatzy() {
-        final int[] counts = this.countDices();
+        final int[] counts = this.countDicesPoint();
         for (final int count : counts) {
             if (count == 5) {
                 return 50;
@@ -26,31 +26,31 @@ public class Yatzy {
     }
 
     public int ones() {
-        return this.countDices(1);
+        return this.countDicesPoint(1);
     }
 
     public int twos() {
-        return this.countDices(2);
+        return this.countDicesPoint(2);
     }
 
     public int threes() {
-        return this.countDices(3);
+        return this.countDicesPoint(3);
     }
 
     public int fours() {
-        return this.countDices(4);
+        return this.countDicesPoint(4);
     }
 
     public int fives() {
-        return this.countDices(5);
+        return this.countDicesPoint(5);
     }
 
     public int sixes() {
-        return this.countDices(6);
+        return this.countDicesPoint(6);
     }
 
     public int pair() {
-        final int[] counts = this.countDices();
+        final int[] counts = this.countDicesPoint();
         for (int at = 0; at < counts.length; at++) {
             if (counts[6 - at - 1] >= 2) {
                 return (6 - at) * 2;
@@ -60,7 +60,7 @@ public class Yatzy {
     }
 
     public int twoPair() {
-        final int[] counts = this.countDices();
+        final int[] counts = this.countDicesPoint();
         int pairNumber = 0;
         int score = 0;
         for (int i = 0; i < counts.length; i += 1) {
@@ -77,7 +77,7 @@ public class Yatzy {
     }
 
     public int fourOfAKind() {
-        final int[] counts = this.countDices();
+        final int[] counts = this.countDicesPoint();
         for (int i = 0; i < counts.length; i++) {
             if (counts[i] >= 4) {
                 return (i + 1) * 4;
@@ -87,7 +87,7 @@ public class Yatzy {
     }
 
     public int threeOfAKind() {
-        final int[] counts = this.countDices();
+        final int[] counts = this.countDicesPoint();
         for (int i = 0; i < counts.length; i++) {
             if (counts[i] >= 3) {
                 return (i + 1) * 3;
@@ -97,7 +97,7 @@ public class Yatzy {
     }
 
     public int smallStraight() {
-        final int[] counts = this.countDices();
+        final int[] counts = this.countDicesPoint();
         if (counts[0] == 1 &&
             counts[1] == 1 &&
             counts[2] == 1 &&
@@ -109,7 +109,7 @@ public class Yatzy {
     }
 
     public int largeStraight() {
-        final int[] counts = this.countDices();
+        final int[] counts = this.countDicesPoint();
         if (counts[1] == 1 &&
             counts[2] == 1 &&
             counts[3] == 1 &&
@@ -127,7 +127,7 @@ public class Yatzy {
         boolean haveThreeSameDice = false;
         int threeSameDiceValue = 0;
 
-        final int[] counts = this.countDices();
+        final int[] counts = this.countDicesPoint();
 
         for (int i = 0; i < counts.length; i += 1) {
             if (counts[i] == 2) {
@@ -150,7 +150,7 @@ public class Yatzy {
         }
     }
 
-    private int[] countDices() {
+    private int[] countDicesPoint() {
         final int[] counts = new int[6];
         counts[this.dices.get(0) - 1] += 1;
         counts[this.dices.get(1) - 1] += 1;
@@ -160,7 +160,7 @@ public class Yatzy {
         return counts;
     }
 
-    private int countDices(final int diceValue) {
+    private int countDicesPoint(final int diceValue) {
         return this.dices.stream().filter(dice -> dice == diceValue).mapToInt(Integer::intValue).sum();
     }
 }
