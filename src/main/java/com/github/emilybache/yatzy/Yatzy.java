@@ -14,10 +14,7 @@ public class Yatzy {
     }
 
     public int yatzy() {
-        final int[] counts = new int[6];
-        for (final int dice : this.dices) {
-            counts[dice - 1]++;
-        }
+        final int[] counts = this.countDices();
         for (final int count : counts) {
             if (count == 5) {
                 return 50;
