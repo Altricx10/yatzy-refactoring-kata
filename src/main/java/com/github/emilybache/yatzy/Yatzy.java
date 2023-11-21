@@ -18,8 +18,8 @@ public class Yatzy {
         for (final int dice : this.dices) {
             counts[dice - 1]++;
         }
-        for (int i = 0; i < counts.length; i++) {
-            if (counts[i] == 5) {
+        for (final int count : counts) {
+            if (count == 5) {
                 return 50;
             }
         }
@@ -29,8 +29,8 @@ public class Yatzy {
     public int chance() {
         int sum;
         sum = 0;
-        for (int at = 0; at < this.dices.length; at++) {
-            sum += this.dices[at];
+        for (final int dice : this.dices) {
+            sum += dice;
         }
         return sum;
     }
@@ -38,8 +38,8 @@ public class Yatzy {
     public int ones() {
         int sum;
         sum = 0;
-        for (int at = 0; at < this.dices.length; at++) {
-            if (this.dices[at] == 1) {
+        for (final int dice : this.dices) {
+            if (dice == 1) {
                 sum += 1;
             }
         }
@@ -49,8 +49,8 @@ public class Yatzy {
     public int twos() {
         int sum;
         sum = 0;
-        for (int at = 0; at < this.dices.length; at++) {
-            if (this.dices[at] == 2) {
+        for (final int dice : this.dices) {
+            if (dice == 2) {
                 sum += 2;
             }
         }
@@ -60,8 +60,8 @@ public class Yatzy {
     public int threes() {
         int sum;
         sum = 0;
-        for (int at = 0; at < this.dices.length; at++) {
-            if (this.dices[at] == 3) {
+        for (final int dice : this.dices) {
+            if (dice == 3) {
                 sum += 3;
             }
         }
@@ -71,8 +71,8 @@ public class Yatzy {
     public int fours() {
         int sum;
         sum = 0;
-        for (int at = 0; at < this.dices.length; at++) {
-            if (this.dices[at] == 4) {
+        for (final int dice : this.dices) {
+            if (dice == 4) {
                 sum += 4;
             }
         }
@@ -81,8 +81,8 @@ public class Yatzy {
 
     public int fives() {
         int sum = 0;
-        for (int i = 0; i < this.dices.length; i++) {
-            if (this.dices[i] == 5) {
+        for (final int dice : this.dices) {
+            if (dice == 5) {
                 sum = sum + 5;
             }
         }
@@ -91,8 +91,8 @@ public class Yatzy {
 
     public int sixes() {
         int sum = 0;
-        for (int at = 0; at < this.dices.length; at++) {
-            if (this.dices[at] == 6) {
+        for (final int dice : this.dices) {
+            if (dice == 6) {
                 sum = sum + 6;
             }
         }
