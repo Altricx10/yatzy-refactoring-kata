@@ -25,27 +25,6 @@ public class Yatzy {
         return 0;
     }
 
-    public static int ones(final int d1, final int d2, final int d3, final int d4, final int d5) {
-        int sum = 0;
-        if (d1 == 1) {
-            sum++;
-        }
-        if (d2 == 1) {
-            sum++;
-        }
-        if (d3 == 1) {
-            sum++;
-        }
-        if (d4 == 1) {
-            sum++;
-        }
-        if (d5 == 1) {
-            sum++;
-        }
-
-        return sum;
-    }
-
     protected int[] dice;
 
     public Yatzy(final int d1, final int d2, final int d3, final int d4, final int _5) {
@@ -55,6 +34,17 @@ public class Yatzy {
       dice[2] = d3;
       dice[3] = d4;
       dice[4] = _5;
+    }
+
+    public int ones() {
+        int sum;
+        sum = 0;
+        for (int at = 0; at != 5; at++) {
+            if (dice[at] == 1) {
+                sum += 1;
+            }
+        }
+        return sum;
     }
 
     public int twos() {

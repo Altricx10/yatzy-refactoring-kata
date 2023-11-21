@@ -68,7 +68,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
@@ -341,7 +341,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
@@ -614,7 +614,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
@@ -887,7 +887,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
@@ -1160,7 +1160,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
@@ -1433,7 +1433,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
@@ -1706,7 +1706,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
@@ -1979,7 +1979,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
@@ -2252,7 +2252,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.ones();
             }
 
             @Test
