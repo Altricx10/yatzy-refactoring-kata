@@ -2,7 +2,18 @@ package com.github.emilybache.yatzy;
 
 public class Yatzy {
 
-    public static int yatzy(final int... dice) {
+    protected int[] dice;
+
+    public Yatzy(final int d1, final int d2, final int d3, final int d4, final int _5) {
+      dice = new int[5];
+      dice[0] = d1;
+      dice[1] = d2;
+      dice[2] = d3;
+      dice[3] = d4;
+      dice[4] = _5;
+    }
+
+    public int yatzy() {
         final int[] counts = new int[6];
         for (final int die : dice) {
             counts[die - 1]++;
@@ -13,17 +24,6 @@ public class Yatzy {
             }
         }
         return 0;
-    }
-
-    protected int[] dice;
-
-    public Yatzy(final int d1, final int d2, final int d3, final int d4, final int _5) {
-      dice = new int[5];
-      dice[0] = d1;
-      dice[1] = d2;
-      dice[2] = d3;
-      dice[3] = d4;
-      dice[4] = _5;
     }
 
     public int chance() {
