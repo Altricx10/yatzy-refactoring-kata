@@ -136,13 +136,13 @@ public class Yatzy {
         }
     }
 
-    public static int fourOfAKind(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
+    public int fourOfAKind() {
         final int[] counts = new int[6];
-        counts[dice1 - 1]++;
-        counts[dice2 - 1]++;
-        counts[dice3 - 1]++;
-        counts[dice4 - 1]++;
-        counts[dice5 - 1]++;
+        counts[this.dices[0] - 1]++;
+        counts[this.dices[1] - 1]++;
+        counts[this.dices[2] - 1]++;
+        counts[this.dices[3] - 1]++;
+        counts[this.dices[4] - 1]++;
         for (int i = 0; i < 6; i++) {
             if (counts[i] >= 4) {
                 return (i + 1) * 4;
