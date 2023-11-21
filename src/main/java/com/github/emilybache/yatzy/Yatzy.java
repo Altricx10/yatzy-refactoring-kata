@@ -54,32 +54,14 @@ public class Yatzy {
 
     public int pair() {
 
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-        final List<Integer> points = countsMap
-            .entrySet()
-            .stream()
-            .filter(entry -> entry.getValue() >= 2)
-            .map(entry -> entry.getKey() * 2)
-            .collect(Collectors.toList());
+        final List<Integer> points = this.countDicePoints(2);
 
         return points.stream().reduce((firstDouble, secondDouble) -> secondDouble).orElse(0);
     }
 
     public int twoPair() {
 
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-        final List<Integer> points = countsMap
-            .entrySet()
-            .stream()
-            .filter(entry -> entry.getValue() >= 2)
-            .map(entry -> entry.getKey() * 2)
-            .collect(Collectors.toList());
+        final List<Integer> points = this.countDicePoints(2);
 
         if (points.size() != 2) {
             return 0;
@@ -90,31 +72,13 @@ public class Yatzy {
 
     public int fourOfAKind() {
 
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-        final List<Integer> points = countsMap
-            .entrySet()
-            .stream()
-            .filter(entry -> entry.getValue() >= 4)
-            .map(entry -> entry.getKey() * 4)
-            .collect(Collectors.toList());
+        final List<Integer> points = this.countDicePoints(4);
 
         return points.stream().reduce(0, Integer::sum);
     }
 
     public int threeOfAKind() {
-        final Map<Integer, Long> countsMap = this.dices.stream()
-            .sorted()
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-        final List<Integer> points = countsMap
-            .entrySet()
-            .stream()
-            .filter(entry -> entry.getValue() >= 3)
-            .map(entry -> entry.getKey() * 3)
-            .collect(Collectors.toList());
+        final List<Integer> points = this.countDicePoints(3);
 
         return points.stream().reduce(0, Integer::sum);
     }
@@ -185,6 +149,19 @@ public class Yatzy {
 
     private int countDicesPoint(final int diceValue) {
         return this.dices.stream().filter(dice -> dice == diceValue).mapToInt(Integer::intValue).sum();
+    }
+
+    private List<Integer> countDicePoints(final int diceValue) {
+        final Map<Integer, Long> countsMap = this.dices.stream()
+            .sorted()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        return countsMap
+            .entrySet()
+            .stream()
+            .filter(entry -> entry.getValue() >= diceValue)
+            .map(entry -> entry.getKey() * diceValue)
+            .collect(Collectors.toList());
     }
 }
 
