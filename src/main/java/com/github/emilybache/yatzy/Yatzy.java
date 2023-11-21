@@ -161,13 +161,7 @@ public class Yatzy {
     }
 
     private int countDices(final int diceValue) {
-        int sum = 0;
-        for (final int dice : this.dices) {
-            if (dice == diceValue) {
-                sum = sum + diceValue;
-            }
-        }
-        return sum;
+        return this.dices.stream().filter(dice -> dice == diceValue).mapToInt(Integer::intValue).sum();
     }
 }
 
