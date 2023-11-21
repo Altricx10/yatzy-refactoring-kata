@@ -66,27 +66,6 @@ public class Yatzy {
         return sum;
     }
 
-    public static int threes(final int d1, final int d2, final int d3, final int d4, final int d5) {
-        int s;
-        s = 0;
-        if (d1 == 3) {
-            s += 3;
-        }
-        if (d2 == 3) {
-            s += 3;
-        }
-        if (d3 == 3) {
-            s += 3;
-        }
-        if (d4 == 3) {
-            s += 3;
-        }
-        if (d5 == 3) {
-            s += 3;
-        }
-        return s;
-    }
-
     protected int[] dice;
 
     public Yatzy(final int d1, final int d2, final int d3, final int d4, final int _5) {
@@ -96,6 +75,18 @@ public class Yatzy {
       dice[2] = d3;
       dice[3] = d4;
       dice[4] = _5;
+    }
+
+    public int threes() {
+        int sum;
+        sum = 0;
+        for (int at = 0; at != 5; at++) {
+            if (dice[at] == 3) {
+                sum += 3;
+            }
+        }
+        return sum;
+
     }
 
     public int fours() {

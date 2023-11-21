@@ -102,7 +102,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
@@ -375,7 +375,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
@@ -648,7 +648,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
@@ -921,7 +921,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
@@ -1194,7 +1194,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
@@ -1467,7 +1467,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
@@ -1740,7 +1740,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
@@ -2013,7 +2013,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
@@ -2286,7 +2286,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.threes();
             }
 
             @Test
