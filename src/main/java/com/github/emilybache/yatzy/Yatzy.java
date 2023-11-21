@@ -60,11 +60,11 @@ public class Yatzy {
 
     public int pair() {
         final int[] counts = new int[6];
-        counts[this.dices[0] - 1]++;
-        counts[this.dices[1] - 1]++;
-        counts[this.dices[2] - 1]++;
-        counts[this.dices[3] - 1]++;
-        counts[this.dices[4] - 1]++;
+        counts[this.dices[0] - 1] += 1;
+        counts[this.dices[1] - 1] += 1;
+        counts[this.dices[2] - 1] += 1;
+        counts[this.dices[3] - 1] += 1;
+        counts[this.dices[4] - 1] += 1;
         for (int at = 0; at < counts.length; at++) {
             if (counts[6 - at - 1] >= 2) {
                 return (6 - at) * 2;
@@ -75,11 +75,11 @@ public class Yatzy {
 
     public int twoPair() {
         final int[] counts = new int[6];
-        counts[this.dices[0] - 1]++;
-        counts[this.dices[1] - 1]++;
-        counts[this.dices[2] - 1]++;
-        counts[this.dices[3] - 1]++;
-        counts[this.dices[4] - 1]++;
+        counts[this.dices[0] - 1] += 1;
+        counts[this.dices[1] - 1] += 1;
+        counts[this.dices[2] - 1] += 1;
+        counts[this.dices[3] - 1] += 1;
+        counts[this.dices[4] - 1] += 1;
         int pairNumber = 0;
         int score = 0;
         for (int i = 0; i < counts.length; i += 1) {
@@ -97,11 +97,11 @@ public class Yatzy {
 
     public int fourOfAKind() {
         final int[] counts = new int[6];
-        counts[this.dices[0] - 1]++;
-        counts[this.dices[1] - 1]++;
-        counts[this.dices[2] - 1]++;
-        counts[this.dices[3] - 1]++;
-        counts[this.dices[4] - 1]++;
+        counts[this.dices[0] - 1] += 1;
+        counts[this.dices[1] - 1] += 1;
+        counts[this.dices[2] - 1] += 1;
+        counts[this.dices[3] - 1] += 1;
+        counts[this.dices[4] - 1] += 1;
         for (int i = 0; i < counts.length; i++) {
             if (counts[i] >= 4) {
                 return (i + 1) * 4;
@@ -112,11 +112,11 @@ public class Yatzy {
 
     public int threeOfAKind() {
         final int[] counts = new int[6];
-        counts[this.dices[0] - 1]++;
-        counts[this.dices[1] - 1]++;
-        counts[this.dices[2] - 1]++;
-        counts[this.dices[3] - 1]++;
-        counts[this.dices[4] - 1]++;
+        counts[this.dices[0] - 1] += 1;
+        counts[this.dices[1] - 1] += 1;
+        counts[this.dices[2] - 1] += 1;
+        counts[this.dices[3] - 1] += 1;
+        counts[this.dices[4] - 1] += 1;
         for (int i = 0; i < counts.length; i++) {
             if (counts[i] >= 3) {
                 return (i + 1) * 3;
@@ -160,12 +160,13 @@ public class Yatzy {
     }
 
     public int fullHouse() {
-        final int[] counts = new int[6];
+
         boolean haveTwoSameDice = false;
         int twoSameDiceValue = 0;
         boolean haveThreeSameDice = false;
         int threeSameDiceValue = 0;
 
+        final int[] counts = new int[6];
         counts[this.dices[0] - 1] += 1;
         counts[this.dices[1] - 1] += 1;
         counts[this.dices[2] - 1] += 1;
