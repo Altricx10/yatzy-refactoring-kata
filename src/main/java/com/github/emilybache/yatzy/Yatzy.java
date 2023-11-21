@@ -69,20 +69,23 @@ public class Yatzy {
     }
 
     public int twoPair() {
-        final int[] counts = this.countDicesPoint();
-        int pairNumber = 0;
-        int score = 0;
-        for (int i = 0; i < counts.length; i += 1) {
-            if (counts[6 - i - 1] >= 2) {
-                pairNumber++;
-                score += (6 - i);
-            }
-        }
-        if (pairNumber == 2) {
-            return score * 2;
-        } else {
+
+        final Map<Integer, Long> countsMap = this.dices.stream()
+            .sorted()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        final List<Integer> points = countsMap
+            .entrySet()
+            .stream()
+            .filter(entry -> entry.getValue() >= 2)
+            .map(entry -> entry.getKey() * 2)
+            .collect(Collectors.toList());
+
+        if (points.size() != 2) {
             return 0;
         }
+
+        return points.stream().mapToInt(Integer::intValue).sum();
     }
 
     public int fourOfAKind() {
