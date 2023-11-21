@@ -99,13 +99,13 @@ public class Yatzy {
         return sum;
     }
 
-    public static int pair(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
+    public int pair() {
         final int[] counts = new int[6];
-        counts[dice1 - 1]++;
-        counts[dice2 - 1]++;
-        counts[dice3 - 1]++;
-        counts[dice4 - 1]++;
-        counts[dice5 - 1]++;
+        counts[this.dices[0] - 1]++;
+        counts[this.dices[1] - 1]++;
+        counts[this.dices[2] - 1]++;
+        counts[this.dices[3] - 1]++;
+        counts[this.dices[4] - 1]++;
         for (int at = 0; at != 6; at++) {
             if (counts[6 - at - 1] >= 2) {
                 return (6 - at) * 2;
