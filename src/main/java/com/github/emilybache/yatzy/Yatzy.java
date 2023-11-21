@@ -15,13 +15,12 @@ public class Yatzy {
     }
 
     public int yatzy() {
-        final int[] counts = this.countDicesPoint();
-        for (final int count : counts) {
-            if (count == 5) {
-                return 50;
-            }
+        final List<Integer> points = this.countDicePoints(5);
+
+        if (points.isEmpty()) {
+            return 0;
         }
-        return 0;
+        return 50;
     }
 
     public int chance() {
@@ -53,14 +52,12 @@ public class Yatzy {
     }
 
     public int pair() {
-
         final List<Integer> points = this.countDicePoints(2);
 
         return points.stream().reduce((firstDouble, secondDouble) -> secondDouble).orElse(0);
     }
 
     public int twoPair() {
-
         final List<Integer> points = this.countDicePoints(2);
 
         if (points.size() != 2) {
@@ -71,7 +68,6 @@ public class Yatzy {
     }
 
     public int fourOfAKind() {
-
         final List<Integer> points = this.countDicePoints(4);
 
         return points.stream().reduce(0, Integer::sum);
