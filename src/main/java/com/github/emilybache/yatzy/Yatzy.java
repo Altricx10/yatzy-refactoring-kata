@@ -27,8 +27,7 @@ public class Yatzy {
     }
 
     public int chance() {
-        int sum;
-        sum = 0;
+        int sum = 0;
         for (final int dice : this.dices) {
             sum += dice;
         }
@@ -36,67 +35,27 @@ public class Yatzy {
     }
 
     public int ones() {
-        int sum;
-        sum = 0;
-        for (final int dice : this.dices) {
-            if (dice == 1) {
-                sum += 1;
-            }
-        }
-        return sum;
+        return this.countDices(1);
     }
 
     public int twos() {
-        int sum;
-        sum = 0;
-        for (final int dice : this.dices) {
-            if (dice == 2) {
-                sum += 2;
-            }
-        }
-        return sum;
+        return this.countDices(2);
     }
 
     public int threes() {
-        int sum;
-        sum = 0;
-        for (final int dice : this.dices) {
-            if (dice == 3) {
-                sum += 3;
-            }
-        }
-        return sum;
+        return this.countDices(3);
     }
 
     public int fours() {
-        int sum;
-        sum = 0;
-        for (final int dice : this.dices) {
-            if (dice == 4) {
-                sum += 4;
-            }
-        }
-        return sum;
+        return this.countDices(4);
     }
 
     public int fives() {
-        int sum = 0;
-        for (final int dice : this.dices) {
-            if (dice == 5) {
-                sum = sum + 5;
-            }
-        }
-        return sum;
+        return this.countDices(5);
     }
 
     public int sixes() {
-        int sum = 0;
-        for (final int dice : this.dices) {
-            if (dice == 6) {
-                sum = sum + 6;
-            }
-        }
-        return sum;
+        return this.countDices(6);
     }
 
     public int pair() {
@@ -232,6 +191,16 @@ public class Yatzy {
         } else {
             return 0;
         }
+    }
+
+    private int countDices(final int diceValue) {
+        int sum = 0;
+        for (final int dice : this.dices) {
+            if (dice == diceValue) {
+                sum = sum + diceValue;
+            }
+        }
+        return sum;
     }
 }
 
