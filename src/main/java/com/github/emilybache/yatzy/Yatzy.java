@@ -22,11 +22,7 @@ public class Yatzy {
     }
 
     public int chance() {
-        int sum = 0;
-        for (final int dice : this.dices) {
-            sum += dice;
-        }
-        return sum;
+        return this.dices.stream().mapToInt(Integer::intValue).sum();
     }
 
     public int ones() {
