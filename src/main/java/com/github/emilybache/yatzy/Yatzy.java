@@ -2,6 +2,9 @@ package com.github.emilybache.yatzy;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Yatzy {
 
@@ -50,13 +53,19 @@ public class Yatzy {
     }
 
     public int pair() {
-        final int[] counts = this.countDicesPoint();
-        for (int at = 0; at < counts.length; at++) {
-            if (counts[6 - at - 1] >= 2) {
-                return (6 - at) * 2;
-            }
-        }
-        return 0;
+
+        final Map<Integer, Long> countsMap = this.dices.stream()
+            .sorted()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        final List<Integer> points = countsMap
+            .entrySet()
+            .stream()
+            .filter(entry -> entry.getValue() >= 2)
+            .map(entry -> entry.getKey() * 2)
+            .collect(Collectors.toList());
+
+        return points.stream().reduce((firstDouble, secondDouble) -> secondDouble).orElse(0);
     }
 
     public int twoPair() {
