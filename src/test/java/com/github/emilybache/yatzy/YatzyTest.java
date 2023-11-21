@@ -1,114 +1,2470 @@
 package com.github.emilybache.yatzy;
 
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
+@DisplayName("yatzy unit test")
 public class YatzyTest {
+    private Yatzy yatzy;
 
-    @Test
-    public void chance_scores_sum_of_all_dice() {
-        final int expected = 15;
-        final int actual = Yatzy.chance(2, 3, 4, 5, 1);
-        assertEquals(expected, actual);
-        assertEquals(16, Yatzy.chance(3, 3, 4, 5, 1));
+    @Nested
+    @DisplayName("given five different dices")
+    class GivenFiveDifferentDices {
+
+        private final int dice1 = 1;
+        private final int dice2 = 3;
+        private final int dice3 = 4;
+        private final int dice4 = 5;
+        private final int dice5 = 6;
+
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
+
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 19")
+            void thenItShouldReturn19() {
+                assertThat(result).isEqualTo(19);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 1")
+            void thenItShouldReturn1() {
+                assertThat(result).isEqualTo(1);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 5")
+            void thenItShouldReturn5() {
+                assertThat(result).isEqualTo(5);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 6")
+            void thenItShouldReturn6() {
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #thre_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
     }
 
-    @Test
-    public void yatzy_scores_50() {
-        final int expected = 50;
-        final int actual = Yatzy.yatzy(4, 4, 4, 4, 4);
-        assertEquals(expected, actual);
-        assertEquals(50, Yatzy.yatzy(6, 6, 6, 6, 6));
-        assertEquals(0, Yatzy.yatzy(6, 6, 6, 6, 3));
+    @Nested
+    @DisplayName("given two same dices")
+    class GivenTwoSameDices {
+
+        private final int dice1 = 1;
+        private final int dice2 = 1;
+        private final int dice3 = 4;
+        private final int dice4 = 5;
+        private final int dice5 = 6;
+
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
+
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 17")
+            void thenItShouldReturn17() {
+                assertThat(result).isEqualTo(17);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 2")
+            void thenItShouldReturn2() {
+                assertThat(result).isEqualTo(2);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 5")
+            void thenItShouldReturn5() {
+                assertThat(result).isEqualTo(5);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 6")
+            void thenItShouldReturn6() {
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 2")
+            void thenItShouldReturn2() {
+                assertThat(result).isEqualTo(2);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #thre_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
     }
 
-    @Test
-    public void test_1s() {
-        assertTrue(Yatzy.ones(1, 2, 3, 4, 5) == 1);
-        assertEquals(2, Yatzy.ones(1, 2, 1, 4, 5));
-        assertEquals(0, Yatzy.ones(6, 2, 2, 4, 5));
-        assertEquals(4, Yatzy.ones(1, 2, 1, 1, 1));
+    @Nested
+    @DisplayName("given three same dices")
+    class GivenThreeSameDices {
+
+        private final int dice1 = 1;
+        private final int dice2 = 1;
+        private final int dice3 = 1;
+        private final int dice4 = 5;
+        private final int dice5 = 6;
+
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
+
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 14")
+            void thenItShouldReturn14() {
+                assertThat(result).isEqualTo(14);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 5")
+            void thenItShouldReturn5() {
+                assertThat(result).isEqualTo(5);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 6")
+            void thenItShouldReturn6() {
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 2")
+            void thenItShouldReturn2() {
+                assertThat(result).isEqualTo(2);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #three_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
     }
 
-    @Test
-    public void test_2s() {
-        assertEquals(4, Yatzy.twos(1, 2, 3, 2, 6));
-        assertEquals(10, Yatzy.twos(2, 2, 2, 2, 2));
+    @Nested
+    @DisplayName("given four same dices")
+    class GivenFourSameDices {
+
+        private final int dice1 = 1;
+        private final int dice2 = 1;
+        private final int dice3 = 1;
+        private final int dice4 = 1;
+        private final int dice5 = 6;
+
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
+
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 10")
+            void thenItShouldReturn10() {
+                assertThat(result).isEqualTo(10);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 6")
+            void thenItShouldReturn6() {
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 2")
+            void thenItShouldReturn2() {
+                assertThat(result).isEqualTo(2);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #three_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
     }
 
-    @Test
-    public void test_threes() {
-        assertEquals(6, Yatzy.threes(1, 2, 3, 2, 3));
-        assertEquals(12, Yatzy.threes(2, 3, 3, 3, 3));
+    @Nested
+    @DisplayName("given five same dices")
+    class GivenFiveSameDices {
+
+        private final int dice1 = 1;
+        private final int dice2 = 1;
+        private final int dice3 = 1;
+        private final int dice4 = 1;
+        private final int dice5 = 1;
+
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
+
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 5")
+            void thenItShouldReturn5() {
+                assertThat(result).isEqualTo(5);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 50")
+            void thenItShouldReturn50() {
+                assertThat(result).isEqualTo(50);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 5")
+            void thenItShouldReturn5() {
+                assertThat(result).isEqualTo(5);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 2")
+            void thenItShouldReturn2() {
+                assertThat(result).isEqualTo(2);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #three_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
     }
 
-    @Test
-    public void fours_test() {
-        assertEquals(12, new Yatzy(4, 4, 4, 5, 5).fours());
-        assertEquals(8, new Yatzy(4, 4, 5, 5, 5).fours());
-        assertEquals(4, new Yatzy(4, 5, 5, 5, 5).fours());
+    @Nested
+    @DisplayName("given two same dices and other two same dices")
+    class GivenTwoSameDicesAndOtherTwoSameDices {
+
+        private final int dice1 = 1;
+        private final int dice2 = 1;
+        private final int dice3 = 2;
+        private final int dice4 = 2;
+        private final int dice5 = 6;
+
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
+
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 12")
+            void thenItShouldReturn12() {
+                assertThat(result).isEqualTo(12);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 2")
+            void thenItShouldReturn2() {
+                assertThat(result).isEqualTo(2);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 6")
+            void thenItShouldReturn6() {
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 6")
+            void thenItShouldReturn6() {
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #three_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
     }
 
-    @Test
-    public void fives() {
-        assertEquals(10, new Yatzy(4, 4, 4, 5, 5).fives());
-        assertEquals(15, new Yatzy(4, 4, 5, 5, 5).fives());
-        assertEquals(20, new Yatzy(4, 5, 5, 5, 5).fives());
+    @Nested
+    @DisplayName("given three same dices and other two same dices")
+    class GivenThreeSameDicesAndOtherTwoSameDices {
+
+        private final int dice1 = 1;
+        private final int dice2 = 1;
+        private final int dice3 = 1;
+        private final int dice4 = 2;
+        private final int dice5 = 2;
+
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
+
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 7")
+            void thenItShouldReturn7() {
+                assertThat(result).isEqualTo(7);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 6")
+            void thenItShouldReturn6() {
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #three_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 7")
+            void thenItShouldReturn7() {
+                assertThat(result).isEqualTo(7);
+            }
+        }
     }
 
-    @Test
-    public void sixes_test() {
-        assertEquals(0, new Yatzy(4, 4, 4, 5, 5).sixes());
-        assertEquals(6, new Yatzy(4, 4, 6, 5, 5).sixes());
-        assertEquals(18, new Yatzy(6, 5, 6, 6, 5).sixes());
+    @Nested
+    @DisplayName("given small straight")
+    class GivenSmallStraight {
+
+        private final int dice1 = 1;
+        private final int dice2 = 2;
+        private final int dice3 = 3;
+        private final int dice4 = 4;
+        private final int dice5 = 5;
+
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
+
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 15")
+            void thenItShouldReturn15() {
+                assertThat(result).isEqualTo(15);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 1")
+            void thenItShouldReturn1() {
+                assertThat(result).isEqualTo(1);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 2")
+            void thenItShouldReturn2() {
+                assertThat(result).isEqualTo(2);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 5")
+            void thenItShouldReturn5() {
+                assertThat(result).isEqualTo(5);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #three_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 15")
+            void thenItShouldReturn15() {
+                assertThat(result).isEqualTo(15);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
     }
 
-    @Test
-    public void one_pair() {
-        assertEquals(6, Yatzy.score_pair(3, 4, 3, 5, 6));
-        assertEquals(10, Yatzy.score_pair(5, 3, 3, 3, 5));
-        assertEquals(12, Yatzy.score_pair(5, 3, 6, 6, 5));
-    }
+    @Nested
+    @DisplayName("given large straight")
+    class GivenLargeStraight {
 
-    @Test
-    public void two_Pair() {
-        assertEquals(16, Yatzy.two_pair(3, 3, 5, 4, 5));
-        assertEquals(16, Yatzy.two_pair(3, 3, 5, 5, 5));
-    }
+        private final int dice1 = 2;
+        private final int dice2 = 3;
+        private final int dice3 = 4;
+        private final int dice4 = 5;
+        private final int dice5 = 6;
 
-    @Test
-    public void three_of_a_kind() {
-        assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 4, 5));
-        assertEquals(15, Yatzy.three_of_a_kind(5, 3, 5, 4, 5));
-        assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 3, 5));
-    }
+        @BeforeEach
+        void setUp() {
+          yatzy = new Yatzy(dice1, dice2, dice3, dice4, dice5);
+        }
 
-    @Test
-    public void four_of_a_knd() {
-        assertEquals(12, Yatzy.four_of_a_kind(3, 3, 3, 3, 5));
-        assertEquals(20, Yatzy.four_of_a_kind(5, 5, 5, 4, 5));
-        assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 3, 3));
-    }
+        @Nested
+        @DisplayName("whe calling #chance")
+        class WhenCallingChance {
 
-    @Test
-    public void smallStraight() {
-        assertEquals(15, Yatzy.smallStraight(1, 2, 3, 4, 5));
-        assertEquals(15, Yatzy.smallStraight(2, 3, 4, 5, 1));
-        assertEquals(0, Yatzy.smallStraight(1, 2, 2, 4, 5));
-    }
+            private int result;
 
-    @Test
-    public void largeStraight() {
-        assertEquals(20, Yatzy.largeStraight(6, 2, 3, 4, 5));
-        assertEquals(20, Yatzy.largeStraight(2, 3, 4, 5, 6));
-        assertEquals(0, Yatzy.largeStraight(1, 2, 2, 4, 5));
-    }
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+            }
 
-    @Test
-    public void fullHouse() {
-        assertEquals(18, Yatzy.fullHouse(6, 2, 2, 2, 6));
-        assertEquals(0, Yatzy.fullHouse(2, 3, 4, 5, 6));
+            @Test
+            @DisplayName("then it should return 20")
+            void thenItShouldReturn20() {
+                assertThat(result).isEqualTo(20);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #yatzy")
+        class WhenCallingYatzy {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.yatzy(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #ones")
+        class WhenCallingOnes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.ones(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #twos")
+        class WhenCallingTwos {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.twos(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 2")
+            void thenItShouldReturn2() {
+                assertThat(result).isEqualTo(2);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #threes")
+        class WhenCallingThrees {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.threes(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 3")
+            void thenItShouldReturn3() {
+                assertThat(result).isEqualTo(3);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fours")
+        class WhenCallingFours {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fours();
+            }
+
+            @Test
+            @DisplayName("then it should return 4")
+            void thenItShouldReturn4() {
+                assertThat(result).isEqualTo(4);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fives")
+        class WhenCallingFives {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.fives();
+            }
+
+            @Test
+            @DisplayName("then it should return 5")
+            void thenItShouldReturn5() {
+                assertThat(result).isEqualTo(5);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #sixes")
+        class WhenCallingSixes {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = yatzy.sixes();
+            }
+
+            @Test
+            @DisplayName("then it should return 6")
+            void thenItShouldReturn6() {
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #score_pair")
+        class WhenCallingScorePair {
+
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.score_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #two_pair")
+        class WhenCallingTwoPair {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.two_pair(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #three_of_a_kind")
+        class WhenCallingThreeOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.three_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #four_of_a_kind")
+        class WhenCallingFourOfAKind {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.four_of_a_kind(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #smallStraight")
+        class WhenCallingSmallStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.smallStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #largeStraight")
+        class WhenCallingLargeStraight {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.largeStraight(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 20")
+            void thenItShouldReturn20() {
+                assertThat(result).isEqualTo(20);
+            }
+        }
+
+        @Nested
+        @DisplayName("when calling #fullHouse")
+        class WhenCallingFullHouse {
+            private int result;
+
+            @BeforeEach
+            void setUp() {
+              result = Yatzy.fullHouse(dice1, dice2, dice3, dice4, dice5);
+            }
+
+            @Test
+            @DisplayName("then it should return 0")
+            void thenItShouldReturn0() {
+                assertThat(result).isZero();
+            }
+        }
     }
 }
