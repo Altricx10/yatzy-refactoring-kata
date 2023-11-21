@@ -89,13 +89,19 @@ public class Yatzy {
     }
 
     public int fourOfAKind() {
-        final int[] counts = this.countDicesPoint();
-        for (int i = 0; i < counts.length; i++) {
-            if (counts[i] >= 4) {
-                return (i + 1) * 4;
-            }
-        }
-        return 0;
+
+        final Map<Integer, Long> countsMap = this.dices.stream()
+            .sorted()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        final List<Integer> points = countsMap
+            .entrySet()
+            .stream()
+            .filter(entry -> entry.getValue() >= 4)
+            .map(entry -> entry.getKey() * 4)
+            .collect(Collectors.toList());
+
+        return points.stream().reduce(0, Integer::sum);
     }
 
     public int threeOfAKind() {
