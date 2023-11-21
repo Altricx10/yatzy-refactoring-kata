@@ -1,7 +1,6 @@
 package com.github.emilybache.yatzy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -12,7 +11,7 @@ public class Yatzy {
     protected List<Integer> dices;
 
     public Yatzy(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
-        this.dices = Arrays.asList(dice1, dice2, dice3, dice4, dice5);
+        this.dices = List.of(dice1, dice2, dice3, dice4, dice5);
     }
 
     public int yatzy() {
