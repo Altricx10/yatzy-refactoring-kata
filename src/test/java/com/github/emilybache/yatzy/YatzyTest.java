@@ -34,7 +34,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
@@ -307,7 +307,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
@@ -580,7 +580,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
@@ -853,7 +853,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
@@ -1126,7 +1126,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
@@ -1399,7 +1399,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
@@ -1672,7 +1672,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
@@ -1945,7 +1945,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
@@ -2218,7 +2218,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              result = Yatzy.chance(dice1, dice2, dice3, dice4, dice5);
+              result = yatzy.chance();
             }
 
             @Test
