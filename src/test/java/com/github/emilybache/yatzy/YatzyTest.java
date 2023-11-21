@@ -23,7 +23,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -34,7 +34,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -51,7 +51,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -68,7 +68,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -85,7 +85,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -102,7 +102,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -119,7 +119,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -136,7 +136,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -153,7 +153,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -171,7 +171,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
+                this.result = Yatzy.pair(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
             }
 
             @Test
@@ -188,7 +188,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
+                this.result = Yatzy.twoPair(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
             }
 
             @Test
@@ -205,7 +205,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
             }
 
             @Test
@@ -222,7 +222,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
             }
 
             @Test
@@ -239,7 +239,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
+                this.result = Yatzy.smallStraight(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
             }
 
             @Test
@@ -256,7 +256,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
+                this.result = Yatzy.largeStraight(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
             }
 
             @Test
@@ -273,7 +273,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
+                this.result = Yatzy.fullHouse(GivenFiveDifferentDices.this.dice1, GivenFiveDifferentDices.this.dice2, GivenFiveDifferentDices.this.dice3, GivenFiveDifferentDices.this.dice4, GivenFiveDifferentDices.this.dice5);
             }
 
             @Test
@@ -296,7 +296,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -307,7 +307,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -324,7 +324,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -341,7 +341,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -358,7 +358,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -375,7 +375,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -392,7 +392,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -409,7 +409,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -426,7 +426,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -444,7 +444,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
+                this.result = Yatzy.pair(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
             }
 
             @Test
@@ -461,7 +461,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
+                this.result = Yatzy.twoPair(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
             }
 
             @Test
@@ -478,7 +478,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
             }
 
             @Test
@@ -495,7 +495,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
             }
 
             @Test
@@ -512,7 +512,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
+                this.result = Yatzy.smallStraight(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
             }
 
             @Test
@@ -529,7 +529,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
+                this.result = Yatzy.largeStraight(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
             }
 
             @Test
@@ -546,7 +546,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
+                this.result = Yatzy.fullHouse(GivenTwoSameDices.this.dice1, GivenTwoSameDices.this.dice2, GivenTwoSameDices.this.dice3, GivenTwoSameDices.this.dice4, GivenTwoSameDices.this.dice5);
             }
 
             @Test
@@ -569,7 +569,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -580,7 +580,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -597,7 +597,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -614,7 +614,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -631,7 +631,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -648,7 +648,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -665,7 +665,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -682,7 +682,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -699,7 +699,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -717,7 +717,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
+                this.result = Yatzy.pair(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
             }
 
             @Test
@@ -734,7 +734,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
+                this.result = Yatzy.twoPair(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
             }
 
             @Test
@@ -751,7 +751,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
             }
 
             @Test
@@ -768,7 +768,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
             }
 
             @Test
@@ -785,7 +785,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
+                this.result = Yatzy.smallStraight(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
             }
 
             @Test
@@ -802,7 +802,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
+                this.result = Yatzy.largeStraight(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
             }
 
             @Test
@@ -819,7 +819,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
+                this.result = Yatzy.fullHouse(GivenThreeSameDices.this.dice1, GivenThreeSameDices.this.dice2, GivenThreeSameDices.this.dice3, GivenThreeSameDices.this.dice4, GivenThreeSameDices.this.dice5);
             }
 
             @Test
@@ -842,7 +842,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -853,7 +853,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -870,7 +870,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -887,7 +887,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -904,7 +904,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -921,7 +921,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -938,7 +938,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -955,7 +955,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -972,7 +972,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -990,7 +990,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
+                this.result = Yatzy.pair(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
             }
 
             @Test
@@ -1007,7 +1007,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
+                this.result = Yatzy.twoPair(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
             }
 
             @Test
@@ -1024,7 +1024,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
             }
 
             @Test
@@ -1041,7 +1041,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
             }
 
             @Test
@@ -1058,7 +1058,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
+                this.result = Yatzy.smallStraight(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
             }
 
             @Test
@@ -1075,7 +1075,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
+                this.result = Yatzy.largeStraight(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
             }
 
             @Test
@@ -1092,7 +1092,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
+                this.result = Yatzy.fullHouse(GivenFourSameDices.this.dice1, GivenFourSameDices.this.dice2, GivenFourSameDices.this.dice3, GivenFourSameDices.this.dice4, GivenFourSameDices.this.dice5);
             }
 
             @Test
@@ -1115,7 +1115,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -1126,7 +1126,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -1143,7 +1143,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -1160,7 +1160,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -1177,7 +1177,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -1194,7 +1194,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -1211,7 +1211,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -1228,7 +1228,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -1245,7 +1245,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -1263,7 +1263,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
+                this.result = Yatzy.pair(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
             }
 
             @Test
@@ -1280,7 +1280,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
+                this.result = Yatzy.twoPair(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
             }
 
             @Test
@@ -1297,7 +1297,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
             }
 
             @Test
@@ -1314,7 +1314,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
             }
 
             @Test
@@ -1331,7 +1331,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
+                this.result = Yatzy.smallStraight(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
             }
 
             @Test
@@ -1348,7 +1348,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
+                this.result = Yatzy.largeStraight(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
             }
 
             @Test
@@ -1365,7 +1365,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
+                this.result = Yatzy.fullHouse(GivenFiveSameDices.this.dice1, GivenFiveSameDices.this.dice2, GivenFiveSameDices.this.dice3, GivenFiveSameDices.this.dice4, GivenFiveSameDices.this.dice5);
             }
 
             @Test
@@ -1388,7 +1388,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -1399,7 +1399,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -1416,7 +1416,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -1433,7 +1433,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -1450,7 +1450,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -1467,7 +1467,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -1484,7 +1484,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -1501,7 +1501,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -1518,7 +1518,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -1536,7 +1536,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.pair(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1553,7 +1553,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.twoPair(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1570,7 +1570,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1587,7 +1587,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1604,7 +1604,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.smallStraight(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1621,7 +1621,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.largeStraight(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1638,7 +1638,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.fullHouse(GivenTwoSameDicesAndOtherTwoSameDices.this.dice1, GivenTwoSameDicesAndOtherTwoSameDices.this.dice2, GivenTwoSameDicesAndOtherTwoSameDices.this.dice3, GivenTwoSameDicesAndOtherTwoSameDices.this.dice4, GivenTwoSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1661,7 +1661,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -1672,7 +1672,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -1689,7 +1689,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -1706,7 +1706,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -1723,7 +1723,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -1740,7 +1740,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -1757,7 +1757,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -1774,7 +1774,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -1791,7 +1791,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -1809,7 +1809,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.pair(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1826,7 +1826,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.twoPair(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1843,7 +1843,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1860,7 +1860,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1877,7 +1877,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.smallStraight(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1894,7 +1894,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.largeStraight(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1911,7 +1911,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
+                this.result = Yatzy.fullHouse(GivenThreeSameDicesAndOtherTwoSameDices.this.dice1, GivenThreeSameDicesAndOtherTwoSameDices.this.dice2, GivenThreeSameDicesAndOtherTwoSameDices.this.dice3, GivenThreeSameDicesAndOtherTwoSameDices.this.dice4, GivenThreeSameDicesAndOtherTwoSameDices.this.dice5);
             }
 
             @Test
@@ -1934,7 +1934,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -1945,7 +1945,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -1962,7 +1962,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -1979,7 +1979,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -1996,7 +1996,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -2013,7 +2013,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -2030,7 +2030,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -2047,7 +2047,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -2064,7 +2064,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -2082,7 +2082,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
+                this.result = Yatzy.pair(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
             }
 
             @Test
@@ -2099,7 +2099,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
+                this.result = Yatzy.twoPair(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
             }
 
             @Test
@@ -2116,7 +2116,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
             }
 
             @Test
@@ -2133,7 +2133,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
             }
 
             @Test
@@ -2150,7 +2150,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
+                this.result = Yatzy.smallStraight(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
             }
 
             @Test
@@ -2167,7 +2167,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
+                this.result = Yatzy.largeStraight(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
             }
 
             @Test
@@ -2184,7 +2184,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
+                this.result = Yatzy.fullHouse(GivenSmallStraight.this.dice1, GivenSmallStraight.this.dice2, GivenSmallStraight.this.dice3, GivenSmallStraight.this.dice4, GivenSmallStraight.this.dice5);
             }
 
             @Test
@@ -2207,7 +2207,7 @@ public class YatzyTest {
 
         @BeforeEach
         void setUp() {
-          YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
+            YatzyTest.this.yatzy = new Yatzy(this.dice1, this.dice2, this.dice3, this.dice4, this.dice5);
         }
 
         @Nested
@@ -2218,7 +2218,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.chance();
+                this.result = YatzyTest.this.yatzy.chance();
             }
 
             @Test
@@ -2235,7 +2235,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.yatzy();
+                this.result = YatzyTest.this.yatzy.yatzy();
             }
 
             @Test
@@ -2252,7 +2252,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.ones();
+                this.result = YatzyTest.this.yatzy.ones();
             }
 
             @Test
@@ -2269,7 +2269,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.twos();
+                this.result = YatzyTest.this.yatzy.twos();
             }
 
             @Test
@@ -2286,7 +2286,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.threes();
+                this.result = YatzyTest.this.yatzy.threes();
             }
 
             @Test
@@ -2303,7 +2303,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fours();
+                this.result = YatzyTest.this.yatzy.fours();
             }
 
             @Test
@@ -2320,7 +2320,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.fives();
+                this.result = YatzyTest.this.yatzy.fives();
             }
 
             @Test
@@ -2337,7 +2337,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = YatzyTest.this.yatzy.sixes();
+                this.result = YatzyTest.this.yatzy.sixes();
             }
 
             @Test
@@ -2355,7 +2355,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.score_pair(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
+                this.result = Yatzy.pair(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
             }
 
             @Test
@@ -2372,7 +2372,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.two_pair(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
+                this.result = Yatzy.twoPair(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
             }
 
             @Test
@@ -2389,7 +2389,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.three_of_a_kind(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
+                this.result = Yatzy.threeOfAKind(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
             }
 
             @Test
@@ -2406,7 +2406,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.four_of_a_kind(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
+                this.result = Yatzy.fourOfAKind(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
             }
 
             @Test
@@ -2423,7 +2423,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.smallStraight(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
+                this.result = Yatzy.smallStraight(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
             }
 
             @Test
@@ -2440,7 +2440,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.largeStraight(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
+                this.result = Yatzy.largeStraight(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
             }
 
             @Test
@@ -2457,7 +2457,7 @@ public class YatzyTest {
 
             @BeforeEach
             void setUp() {
-              this.result = Yatzy.fullHouse(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
+                this.result = Yatzy.fullHouse(GivenLargeStraight.this.dice1, GivenLargeStraight.this.dice2, GivenLargeStraight.this.dice3, GivenLargeStraight.this.dice4, GivenLargeStraight.this.dice5);
             }
 
             @Test

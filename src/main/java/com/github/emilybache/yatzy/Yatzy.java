@@ -99,7 +99,7 @@ public class Yatzy {
         return sum;
     }
 
-    public static int score_pair(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
+    public static int pair(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
         final int[] counts = new int[6];
         counts[dice1 - 1]++;
         counts[dice2 - 1]++;
@@ -114,7 +114,7 @@ public class Yatzy {
         return 0;
     }
 
-    public static int two_pair(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
+    public static int twoPair(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
         final int[] counts = new int[6];
         counts[dice1 - 1]++;
         counts[dice2 - 1]++;
@@ -136,7 +136,7 @@ public class Yatzy {
         }
     }
 
-    public static int four_of_a_kind(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
+    public static int fourOfAKind(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
         final int[] counts = new int[6];
         counts[dice1 - 1]++;
         counts[dice2 - 1]++;
@@ -151,7 +151,7 @@ public class Yatzy {
         return 0;
     }
 
-    public static int three_of_a_kind(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
+    public static int threeOfAKind(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
         final int[] counts = new int[6];
         counts[dice1 - 1]++;
         counts[dice2 - 1]++;
