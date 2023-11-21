@@ -1,16 +1,14 @@
 package com.github.emilybache.yatzy;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Yatzy {
 
-    protected int[] dices;
+    protected List<Integer> dices;
 
     public Yatzy(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
-        this.dices = new int[5];
-        this.dices[0] = dice1;
-        this.dices[1] = dice2;
-        this.dices[2] = dice3;
-        this.dices[3] = dice4;
-        this.dices[4] = dice5;
+        this.dices = Arrays.asList(dice1, dice2, dice3, dice4, dice5);
     }
 
     public int yatzy() {
@@ -158,11 +156,11 @@ public class Yatzy {
 
     private int[] countDices() {
         final int[] counts = new int[6];
-        counts[this.dices[0] - 1] += 1;
-        counts[this.dices[1] - 1] += 1;
-        counts[this.dices[2] - 1] += 1;
-        counts[this.dices[3] - 1] += 1;
-        counts[this.dices[4] - 1] += 1;
+        counts[this.dices.get(0) - 1] += 1;
+        counts[this.dices.get(1) - 1] += 1;
+        counts[this.dices.get(2) - 1] += 1;
+        counts[this.dices.get(3) - 1] += 1;
+        counts[this.dices.get(4) - 1] += 1;
         return counts;
     }
 
