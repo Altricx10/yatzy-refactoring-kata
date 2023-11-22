@@ -8,10 +8,11 @@ import java.util.stream.Collectors;
 
 public class Yatzy {
 
-    protected List<Integer> dices;
+    private final Map<Integer, Long> dicesGrouped;
 
     public Yatzy(final int dice1, final int dice2, final int dice3, final int dice4, final int dice5) {
-        this.dices = List.of(dice1, dice2, dice3, dice4, dice5);
+        final List<Integer> dices = List.of(dice1, dice2, dice3, dice4, dice5);
+        this.dicesGrouped = this.groupDicesByValues(dices);
     }
 
     public int yatzy() {
@@ -25,7 +26,10 @@ public class Yatzy {
     }
 
     public int chance() {
-        return this.dices.stream().mapToInt(Integer::intValue).sum();
+        return this.dicesGrouped.entrySet()
+            .stream()
+            .mapToInt(entry -> entry.getKey() * entry.getValue().intValue())
+            .sum();
     }
 
     public int ones() {
@@ -91,13 +95,10 @@ public class Yatzy {
     }
 
     public int fullHouse() {
+        final boolean containsThreeSameDices = this.dicesGrouped.values().stream().anyMatch(value -> value == 3);
 
-        final Map<Integer, Long> countsMap = this.groupDicesByValues();
-
-        final boolean containsThreeSameDices = countsMap.values().stream().anyMatch(value -> value == 3);
-
-        if (containsThreeSameDices && countsMap.size() == 2) {
-            return countsMap.entrySet().stream().mapToInt(entry -> entry.getKey() * entry.getValue().intValue()).sum();
+        if (containsThreeSameDices && this.dicesGrouped.size() == 2) {
+            return this.dicesGrouped.entrySet().stream().mapToInt(entry -> entry.getKey() * entry.getValue().intValue()).sum();
         }
 
         return 0;
@@ -110,10 +111,11 @@ public class Yatzy {
      * 2 : 2 dices
      * 3 : 1 dices
      *
+     * @param dices the dices list
      * @return a {@link Map}<{@link Integer}, {@link Long}> where key is a dice value and value is the number of dices
      */
-    private Map<Integer, Long> groupDicesByValues() {
-        return this.dices.stream()
+    private Map<Integer, Long> groupDicesByValues(final List<Integer> dices) {
+        return dices.stream()
             .sorted()
             .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
@@ -126,7 +128,11 @@ public class Yatzy {
      * @return the points number for a specific dice value
      */
     private int countDicesPoint(final int diceValue) {
-        return this.dices.stream().filter(dice -> dice == diceValue).mapToInt(Integer::intValue).sum();
+        return this.dicesGrouped.entrySet()
+            .stream()
+            .filter(entry -> entry.getKey() == diceValue)
+            .mapToInt(entry -> entry.getValue().intValue() * diceValue)
+            .sum();
     }
 
     /**
@@ -138,9 +144,7 @@ public class Yatzy {
      * @return a {@link List} of {@link Integer} who contains same dices value points
      */
     private List<Integer> countDicePoints(final int sameDiceValue) {
-        final Map<Integer, Long> countsMap = this.groupDicesByValues();
-
-        return countsMap
+        return this.dicesGrouped
             .entrySet()
             .stream()
             .filter(entry -> entry.getValue() >= sameDiceValue)
@@ -155,18 +159,15 @@ public class Yatzy {
      * @return the straight points
      */
     private int countStraightPoints(final ArrayList<Integer> straightValues) {
-
-        final Map<Integer, Long> countsMap = this.groupDicesByValues();
-
-        final boolean containsStraight = countsMap.keySet().stream()
+        final boolean containsStraight = this.dicesGrouped.keySet().stream()
             .anyMatch(value -> straightValues.remove(value)
                 && straightValues.isEmpty());
 
-        if (countsMap.size() != 5 || !containsStraight) {
+        if (this.dicesGrouped.size() != 5 || !containsStraight) {
             return 0;
         }
 
-        return countsMap.keySet().stream().mapToInt(Integer::intValue).sum();
+        return this.dicesGrouped.keySet().stream().mapToInt(Integer::intValue).sum();
     }
 
     /**
